@@ -1,0 +1,49 @@
+{
+  "name": "angular-build-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.ts",
+  "scripts": {
+    "test": "karma start karma.config.js",
+    "posttest": "npm run coverage:html && npm run coverage:cobertura",
+    "coverage:html": "remap-istanbul -i target/coverage-src/report.json -o target/coverage-reports/html -t html",
+    "coverage:cobertura": "remap-istanbul -i target/coverage-src/report.json -o target/coverage-reports/cobertura.xml -t cobertura",
+    "build": "webpack --env=prod",
+    "build:test": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "author": "Daniel Schwab",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "2.4.9",
+    "@angular/compiler": "2.4.9",
+    "@angular/core": "2.4.9",
+    "@angular/platform-browser": "2.4.9",
+    "@angular/platform-browser-dynamic": "2.4.9",
+    "intl": "1.2.5",
+    "rxjs": "5.2.0",
+    "zone.js": "0.7.7"
+  },
+  "devDependencies": {
+    "@types/core-js": "0.9.35",
+    "@types/jasmine": "2.5.43",
+    "@types/webpack": "2.2.7",
+    "angular2-template-loader": "0.6.2",
+    "awesome-typescript-loader": "3.0.8",
+    "html-webpack-plugin": "2.28.0",
+    "istanbul-instrumenter-loader": "2.0.0",
+    "jasmine-core": "2.5.2",
+    "karma": "1.5.0",
+    "karma-coverage": "1.1.1",
+    "karma-jasmine": "1.1.0",
+    "karma-junit-reporter": "1.2.0",
+    "karma-phantomjs-launcher": "1.0.2",
+    "karma-sourcemap-loader": "0.3.7",
+    "karma-webpack": "2.0.2",
+    "raw-loader": "0.5.1",
+    "remap-istanbul": "0.9.1",
+    "webpack": "2.2.1",
+    "webpack-dev-server": "2.4.1",
+    "webpack-merge": "3.0.0"
+  }
+}
