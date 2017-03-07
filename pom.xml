@@ -32,7 +32,7 @@
                     </execution>
                     <execution>
                         <id>npm test</id>
-                        <phase>test</phase>
+                        <phase>test-compile</phase>
                         <goals>
                             <goal>npm</goal>
                         </goals>
