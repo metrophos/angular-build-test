@@ -1,9 +1,8 @@
 var webpack = require('webpack');
-var merge = require('webpack-merge');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = function (env) {
-    var commonConfig = {
+    var config = {
         entry: {
             'app': './src/main.ts',
             'vendor': './src/vendor.ts'
@@ -45,14 +44,12 @@ module.exports = function (env) {
     };
 
     if (env === 'prod') {
-        var customConfig = {
-            plugins: [
-                new webpack.optimize.UglifyJsPlugin({
-                    output: {comments: false}
-                })
-            ]
-        };
+        commonConfig.plugins.push(
+            new webpack.optimize.UglifyJsPlugin({
+                output: {comments: false}
+            })
+        );
     }
 
-    return merge.smart(commonConfig, customConfig);
+    return config;
 };
