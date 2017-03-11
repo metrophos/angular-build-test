@@ -3,7 +3,7 @@ var webpack = require('webpack');
 module.exports = function (config) {
     config.set({
         frameworks: ['jasmine'],
-        reporters: ['progress', 'junit', 'coverage'],
+        reporters: ['progress', 'junit', 'coverage', 'karma-remap-istanbul'],
         browsers: ['PhantomJS'],
         singleRun: true,
         files: [
@@ -46,14 +46,19 @@ module.exports = function (config) {
             ]
         },
         webpackMiddleware: {stats: 'errors-only'},
-        coverageReporter: {
-            dir: 'target',
-            type: 'json',
-            file: 'report.json',
-            subdir: 'coverage-src'
-        },
         junitReporter: {
             outputDir: 'target/surefire-reports/'
+        },
+        coverageReporter: {
+            reporters: [
+                {type: 'in-memory'}
+            ]
+        },
+        remapIstanbulReporter: {
+            reports: {
+                html: 'target/coverage',
+                cobertura: 'target/coverage-reports/cobertura.xml'
+            }
         }
     });
 };

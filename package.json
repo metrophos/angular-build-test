@@ -5,11 +5,8 @@
   "main": "src/main.ts",
   "scripts": {
     "test": "karma start karma.config.js",
-    "posttest": "npm run coverage:html && npm run coverage:cobertura",
-    "coverage:html": "remap-istanbul -i target/coverage-src/report.json -o target/coverage-reports/html -t html",
-    "coverage:cobertura": "remap-istanbul -i target/coverage-src/report.json -o target/coverage-reports/cobertura.xml -t cobertura",
-    "build": "webpack --env=prod",
-    "build:test": "webpack",
+    "build": "webpack",
+    "build:prod": "webpack --env=prod",
     "start": "webpack-dev-server"
   },
   "license": "MIT",
@@ -37,6 +34,7 @@
     "karma-jasmine": "1.1.0",
     "karma-junit-reporter": "1.2.0",
     "karma-phantomjs-launcher": "1.0.2",
+    "karma-remap-istanbul": "0.6.0",
     "karma-sourcemap-loader": "0.3.7",
     "karma-webpack": "2.0.2",
     "raw-loader": "0.5.1",
