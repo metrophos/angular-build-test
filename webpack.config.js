@@ -44,7 +44,7 @@ module.exports = function (env) {
     };
 
     if (env === 'prod') {
-        commonConfig.plugins.push(
+        config.plugins.push(
             new webpack.optimize.UglifyJsPlugin({
                 output: {comments: false}
             })
