@@ -58,12 +58,12 @@ module.exports = function (config) {
         // Der webpack preprocessor soll nur relevante Log Dateien ausgeben
         webpackMiddleware: {stats: 'errors-only'},
 
-        // Junit Report Konfiguration
+        // Junit Report XML Ausgabe für Jenkins
         junitReporter: {
             outputDir: 'target/surefire-reports/'
         },
 
-        // Coverage Report über istanbul
+        // Coverage Report Generierung über istanbul
         coverageReporter: {
             reporters: [
                 {type: 'in-memory'}
@@ -71,6 +71,7 @@ module.exports = function (config) {
         },
 
         // Konvertiert istanbul Ergebnis so das TypeScript und nicht JavaScript angezeigt wird
+        // Es können verschiedene Reporttypen wie zum Beispiel HTML und Cobertura generiert werden
         remapIstanbulReporter: {
             reports: {
                 html: 'target/coverage',
