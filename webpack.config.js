@@ -20,14 +20,9 @@ module.exports = function (env) {
                 {
                     test: /\.ts$/,
                     use: [
-                        'awesome-typescript-loader',
-                        'angular2-template-loader'
+                        'awesome-typescript-loader'
                     ],
                     exclude: /node_modules/
-                },
-                {
-                    test: /\.html$/,
-                    use: 'raw-loader'
                 }
             ]
         },

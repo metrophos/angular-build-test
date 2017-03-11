@@ -1,13 +1,12 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'example-app',
-    templateUrl: './app.component.html'
+    template: `
+        <h1>{{title}}</h1>
+        <p>Dummy-Component for Demos ...</p>
+    `
 })
 export class AppComponent {
-
-    get currentDate() {
-        return new Date();
-    }
-
+    title = 'Example';
 }

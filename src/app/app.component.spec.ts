@@ -14,14 +14,9 @@ describe('AppComponent', () => {
         fixture = TestBed.createComponent(AppComponent);
         h1 = fixture.debugElement.query(By.css('h1')).nativeElement;
     });
-
-    it('should display current date', () => {
-        var baseTime = new Date(2000, 0, 1);
-        jasmine.clock().mockDate(baseTime);
-
+    it('should display title', () => {
         expect(h1.textContent).toBe('');
         fixture.detectChanges();
-        expect(h1.textContent).toBe('Today: 01.01.2000');
+        expect(h1.textContent).toBe('Example');
     });
-
 });
