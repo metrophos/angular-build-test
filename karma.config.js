@@ -75,7 +75,7 @@ module.exports = function (config) {
         remapIstanbulReporter: {
             reports: {
                 html: 'target/coverage',
-                cobertura: 'target/coverage-reports/cobertura.xml'
+                cobertura: 'target/site/cobertura/coverage.xml'
             }
         }
     });
